@@ -21,19 +21,21 @@ function App() {
     <div className="App">
       <Form handleSubmit={handleSubmit} city={(e) => setCity(e.target.value)} />
 
-      {weather.map((item) => (
-        <div key={item.id}>
-          <Weather
-            city={item.name}
-            country={item.sys.country}
-            temp={item.main.temp}
-            maxTemp={item.main["temp_max"]}
-            minTemp={item.main["temp_min"]}
-            icon={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${item.weather[0]["icon"]}.svg`}
-            description={item.weather[0].description}
-          />
-        </div>
-      ))}
+      <div className="weather-container">
+        {weather.map((item) => (
+          <div key={item.id}>
+            <Weather
+              city={item.name}
+              country={item.sys.country}
+              temp={item.main.temp}
+              maxTemp={item.main["temp_max"]}
+              minTemp={item.main["temp_min"]}
+              icon={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${item.weather[0]["icon"]}.svg`}
+              description={item.weather[0].description}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

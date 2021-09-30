@@ -1,23 +1,22 @@
 import React from "react";
+import "./Weather.css";
 
-function Weather({ city, country, temp, maxTemp, minTemp, icon, description }) {
+function Weather({ city, country, temp, icon, description }) {
   return (
-    <>
-      <div>
+    <div className="Weather">
+      <div className="local-name">
         <h2>{city}</h2>
         <span>{country}</span>
       </div>
-      <div>
-        <div>
-          <img src={icon} alt={description} />
-          <h2>{description}</h2>
+      <div className="temp-description">
+        <div className="temp-now">
+          <h1>{Math.round(temp)}</h1>
+          <span>°C</span>
         </div>
-        <div>
-          <h3>{maxTemp}</h3>
-          <h3>{minTemp}</h3>
-        </div>
+        <img src={icon} alt={description} />
+        <h2>{description.toUpperCase()}</h2>
       </div>
-    </>
+    </div>
   );
 }
 
