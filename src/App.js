@@ -23,15 +23,14 @@ function App() {
 
       <div className="weather-container">
         {weather.map((item) => (
-          <div key={item.id}>
-            <Weather
-              city={item.name}
-              country={item.sys.country}
-              temp={item.main.temp}
-              icon={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${item.weather[0]["icon"]}.svg`}
-              description={item.weather[0].description}
-            />
-          </div>
+          <Weather
+            key={item.id}
+            city={item.name}
+            country={item.sys.country}
+            temp={item.main.temp}
+            icon={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${item.weather[0]["icon"]}.svg`}
+            description={item.weather[0].description}
+          />
         ))}
       </div>
     </div>
